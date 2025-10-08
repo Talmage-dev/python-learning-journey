@@ -1,0 +1,19 @@
+Learning Journal Template
+
+Date: DD-MM-YYYY
+
+What I learned:
+- Concept 1
+- Concept 2
+
+What I Built:
+- Project/exercise name
+- Key challenges
+
+Questions/Confusion:
+- What I don’t understand yet
+
+Commands/Tools Used
+- bash
+- command 1
+- command 2
