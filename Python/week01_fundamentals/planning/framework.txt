@@ -1,0 +1,71 @@
+Practice Excercise: Apply Framework
+
+Problem: Grade Statistics Calculator
+
+Step 1: Understand
+- Input: List of scores [85, 92, 78, 90, 88]
+- Output: Statistics (highest, lowest, average, count above 85, pass/fail)
+- Constraints: Working with integers, average >= 80 is passing
+
+Step 2: Break Down
+Main goal: Display various statistics about test scores
+Sub goals:
+  1. Store scores (use a list)
+  2. Calculate statistics (functions)
+  3. Display results (print statements)
+
+Step 3: Plan Order
+
+SETUP:
+- scores = [85, 92, 78, 90, 88]
+
+FUNCTIONS:
+- get_highest_score(scores) -> int
+- get_lowest_score(scores) -> int
+- get_average_score(scores) -> float
+- count_above_85(scores) -> int
+- is_passing(average) -> string message
+
+MAIN LOGIC:
+1. Calculate highest score
+2. Calculate lowest score
+3. Calculate average score
+4. Count scores above 85
+5. Determine pass/fail based on average
+6. Display all results
+
+Step 4: Pseudocode (for each function)
+
+# Function: get_highest_score
+# Input: list of scores
+# Output: highest score (int)
+# Steps: Return maximum value from list
+
+# Function: get_lowest_score
+# Input: list of scores
+# Output: lowest score (int)
+# Steps: Return minimum value from list
+
+# Function: get_average_score
+# Input: list of scores
+# Output: average score (float)
+# Steps:
+#   1. Sum all scores
+#   2. Divide by count of scores
+#   3. Return result
+
+# Function: count_above_85
+# Input: list of scores
+# Output: count (int)
+# Steps:
+#   1. Initialize counter to 0
+#   2. Loop through each score
+#   3. If score > 85, increment counter
+#   4. Return counter
+
+# Function: is_passing
+# Input: average score (float)
+# Output: message (string)
+# Steps:
+#   1. If average >= 80, return "Pass"
+#   2. Else return "Fail"
