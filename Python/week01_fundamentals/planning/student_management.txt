@@ -1,0 +1,129 @@
+Day 6 Practice Exercise: Student Management System
+
+Build a student management system using the framework from yesterday
+
+Requirements:
+
+1. Store multiple students with their information:
+    # Name
+    # Age
+    # Grades (list of scores)
+    # Email
+
+2. Create these functions:
+    # add_student(students, student_id, name, age, email)
+    - Add new student
+
+    # add_grade(students, student_id, grade)
+    - Add a grade to a student
+
+    # get_average(grades)
+    - Calculate average from lists of grades
+
+    # get_student_info(students, student_id)
+    - Return formatted student information
+
+    # get_all_averages(students)
+    - Return dictionary of all student averages
+
+3. Main program:
+    # Create 3 students
+    # Add grades to each student
+    # Display each student's info and average
+    # Display class average
+
+Framework:
+
+1. Understand:
+- Input: dictionary of infomation and a list
+- Ouptut: Statistics - students, grades, averages
+- Constraints: Working with strings, integers, floats, lists, dictionaries
+
+2. Breakdown:
+What functions:
+    # add_student(students, student_id, name, age, email)
+    - Add new student
+
+    # add_grade(students, student_id, grade)
+    - Add a grade to a student
+
+    # get_average(grades)
+    - Calculate average from lists of grades
+
+    # get_student_info(students, student_id)
+    - Return formatted student information
+
+    # get_all_averages(students)
+    - Return dictionary of all student averages
+
+Data structures:
+    # nested dictionary (dictionary of dictionaries)
+
+3. Plan Order:
+
+Setup:
+students = {} # Empty dictionary to start
+
+Functions:
+# add_student(students, student_id, name, age, email) -> None (modifies students dictionary)
+# add_grade(students, student_id, grade) -> None (modifies students dictionary)
+# get_average(grades) -> (float)
+# get_student_info(students, student_id) -> string (formatted info)
+# get_all_averages(students) -> dictionary
+
+Main Logic:
+1) Create empty students dictionary
+2) Create 3 students (call add_student() 3 times)
+3) Add grades to each student (call add_grade() multiple times)
+4) Loop through students:
+    - Display each student's info
+  - Display their average
+5) Calculate and display class average (average all averages)
+
+4. Pseudocode: (for each function)
+
+# Function: add_student
+# Input: students dict, student_id, name, age, email
+# Output: None (modifies student dict)
+# Steps:
+#   1. Create a new dictionary for this student with:
+#       - name
+#       - age
+#       - email
+#       - grades (empty list to start)
+#   2. Add this student dictionary to students using student_id as key
+
+# Function: add_grade
+# Input: students dict, student_id, grade
+# Output: None (modifies students dict)
+# Steps:
+#   1. Add grade to student
+
+# Function: get_average
+# Input: list of grades
+# Output: float (average)
+# Steps:
+#   1. Sum all grades in the list
+#   2. divide sum by number of grades (length of list)
+#   3. return average
+
+# Function: get_student_info
+# Input: students dict, student_id
+# Output: string (formatted info)
+# Steps:
+#    1. Access student using student_id
+#    2. Get student's name, age, email, grades
+#    3. Calculate average of grades (call get_average)
+#    4. Format into a readable string
+#    5. Return the formatted string
+
+# Function: get_all_averages
+# Input: students dict
+# Output: dictionary {student_id: average}
+# Steps:
+#   1. Create empty dictionary for results
+#   2. Loop through each student in students dict
+#   3. For each student, get their grades
+#   4. Calculate average (call get_average)
+#   5. Add student_id and average to results dictionary
+#   6. Return results dictionary

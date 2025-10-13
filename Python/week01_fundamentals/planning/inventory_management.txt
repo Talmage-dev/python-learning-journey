@@ -1,0 +1,168 @@
+Day 6 Final Challenge: Inventory Management System
+
+Build a product inventory system for a small store
+
+Requirements:
+
+1. Data structure:
+
+Store products with:
+    # Product ID (key)
+    # Name
+    # Price
+    # Quantity in stock
+    # Category (e.g. "Electronics", "Clothing", "Food")
+
+2. Functions to Create:
+
+add_product(inventory, product_id, name, price, quantity, category)
+# Add a new product to inventory
+
+update_stock(inventory, product_id, quantity_change)
+# Increase or decrease stock (positive = add, negative = remove)
+
+get_product_value(inventory, product_id)
+# Return total value of that product (price × quantity)
+
+get_total_inventory_value(inventory)
+# Return total value of all products
+
+get_low_stock_products(inventory, threshold=5)
+# Return list of products with quantity below threshold
+
+get_products_by_category(inventory, category)
+# Return dictionary of products in that category
+
+display_product(inventory, product_id)
+# Print formatted product information
+
+3. Main Program:
+    1) Create 5 products in different categories
+    2) Display all products
+    3) Update stock for 2 products (one increase, one decrease)
+    4) Display low stock products (threshold = 10)
+    5) Display all products in one category
+    6) Display total inventory value
+
+Framework:
+
+1) Understand:
+
+Inputs: dictionary
+Outputs: statistics, data, inventory
+Constraints: Working with strings, integers, floats, functions, lists, dictionaries, loops, conditionals
+
+2) Breakdown:
+
+What data structure?: nested dictionaries
+What functions?:
+    add_product(inventory, product_id, name, price, quantity, category)
+    # Add a new product to inventory
+
+    update_stock(inventory, product_id, quantity_change)
+    # Increase or decrease stock (positive = add, negative = remove)
+
+    get_product_value(inventory, product_id)
+    # Return total value of that product (price × quantity)
+
+    get_total_inventory_value(inventory)
+    # Return total value of all products
+
+    get_low_stock_products(inventory, threshold=5)
+    # Return list of products with quantity below threshold
+
+    get_products_by_category(inventory, category)
+    # Return dictionary of products in that category
+
+    display_product(inventory, product_id)
+    # Print formatted product information
+
+3) Plan Order: (Setup, Functions, Main Logic)
+
+    1. Setup:
+        - Create empty dictionary (store product information)
+
+    2. Functions:
+        - add_product(inventory, product_id, name, price, quantity, category) -> None (modifies product dict)
+        - update_stock(inventory, product_id, quantity_change) -> None (modifies product dict)
+        - get_product_value(inventory, product_id) -> (float)
+        - get_total_inventory_value(inventory) -> (float)
+        - get_low_stock_products(inventory, threshold=5) -> (list)
+        - get_products_by_category(inventory, category) -> (dictionary)
+        - display_product(inventory, product_id) -> (formatted info)
+
+    3. Main Program:
+
+        - Create empty inventory dictionary
+        - Create 5 products in different categories
+        - Display all products - loop through dictionary, call display_product
+        - Update stock for 2 products (one increase, on decrease) - call update_stock
+        - Display low stock products (threshold = 10) - call get_low_stock_products
+        - Display all products in one category - find products of category, put in dictionary, loop & call display_product
+        - Display total inventory value - call get_total_inventory_value
+
+Pseudocode:
+
+# Function: add_product()
+# Input: inventory, product_id, name, price, quantity, category
+# Output: None 
+# Steps: 
+#   1. Create a new dictionary for this student with:
+#       - name
+#       - price
+#       - quantity
+#       - category
+#   2. Add this product dictionary to inventory using product_id as key
+
+# Function: update_stock
+# Input: inventory, product_id, quantity_change
+# Output: None
+# Steps:
+#   1. Add quantity value - Increase or decrease stock (positive = add, negative = remove)
+
+# Function: get_product_value(inventory, product_id)
+# Input: inventory, product_id
+# Output: float (price x quantity)
+# Steps: 
+#   1. Get price and quantity values
+#   2. Calculate value
+#   3. Return value
+
+# Function: get_total_inventory_value
+# Input: inventory (dict)
+# Output: float (total value of all products)
+# Steps:
+#   1. Initialize total_value to 0
+#   2. Loop through each product in inventory
+#   3. For each product, calculate its value (call get_product_value)
+#   4. Add product value to total_value
+#   5. Return total_value
+
+# Function: get_low_stock_products
+# Input: inventory (dict), threshold (int, default=5)
+# Output: list of product_ids with low stock
+# Steps:
+#   1. Create empty list for results
+#   2. Loop through each product in inventory
+#   3. If product's quantity < threshold:
+#   4.     Add product_id to results list
+#   5. Return results list
+
+# Function: get_products_by_category
+# Input: inventory (dict), category (string)
+# Output: dictionary of products in that category
+# Steps:
+#   1. Create empty dictionary for results
+#   2. Loop through each product in inventory
+#   3. If product's category matches the input category:
+#   4.     Add product to results dictionary (same product_id as key)
+#   5. Return results dictionary
+
+# Function: display_product
+# Input: inventory (dict), product_id
+# Output: None (prints formatted info)
+# Steps:
+#   1. Access product using product_id
+#   2. Get product's name, price, quantity, category
+#   3. Calculate product value (call get_product_value)
+#   4. Format and print all information
