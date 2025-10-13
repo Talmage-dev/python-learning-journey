@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "DOOMNET.C": "cpp"
-    }
+    },
+    "codium.codeCompletion.enable": false
 }
