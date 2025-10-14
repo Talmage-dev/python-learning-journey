@@ -1,0 +1,112 @@
+Day 7 Practice Exercise: Student Grade File Manager
+
+Build a program that manages student grades using files!
+
+Requirements:
+
+1. Create these functions:
+    # save_students_to_file(students, filename) - Save student dict to file
+    # load_students_from_file(filename) - Load students from file
+    # add_student_to_file(filename, student_id, name, grades) - Append new student
+    # display_file_contents(filename) - Show what's in the file
+
+2. File Format (simple text):
+    S001,Alice,85,90,92
+    S002,Bob,78,82,88
+    S003,Charlie,92,95,89
+
+3. Main Program:
+    # Create 3 students (reuse Day 6 structure)
+    # Save them to "students.txt"
+    # Load them back from file
+    # Add a new student to the file
+    # Display all students from file
+    # Calculate and display averages
+
+---
+
+Framework
+
+1. Understand
+
+What are inputs?: files (dictionaries)
+
+What are the outputs?: dictionaries, display files
+
+2. Break Down
+
+What functions do you need?:
+    # save_students_to_file(students, filename) -> None (modifies dictionary in file)
+    # load_students_from_file(filename) -> Dictionary
+    # add_student_to_file(filename, student_id, name, grades) -> None (modifies dictionary)
+    # display_file_contents(filename) - String (display)
+
+3. Plan Order
+
+Setup:
+    # Create Students file
+    # Create empty dictionary (store students)
+Functions:
+    # save_students_to_file(students, filename) -> None (modifies dictionary and file)
+    # load_students_from_file(filename) -> Dictionary
+    # add_student_to_file(filename, student_id, name, grades) -> None (modifies dictionary, and file)
+    # display_file_contents(filename) - String (display)
+Main logic:
+    # Create 3 students (reuse Day 6 structure)
+    # Save them to "students.txt"
+    # Load them back from file
+    # Add a new student to the file
+    # Display all students from file
+    # Calculate and display averages
+4. Pseudocode
+    # Function: save_students_to_file
+    # Inputs: students (dict), filename (file)
+    # Output: None
+    # Steps: 
+        1. Open the file in write mode ("w")
+        2. Loop through each student in the students dictionary
+        3. For each student:
+            a. Get the student_id (key)
+            b. Get student info (name, grades)
+            c. Format the grades list into a string (join with commas)
+            d. Create the line: "student_id,name,grades_string\n"
+            e. Write this line to the file
+        4. File closes automatically (using 'with')
+    
+    # Function: load_students_from_file
+    # Inputs: filename (file)
+    # Output: dictionary
+    # Steps:
+        1. Create empty dictionary (students)
+        2. Open file in read mode ("r")
+        3. Loop through each line in file
+        4. For each line:
+            a. Remove whitespace/newline (strip)
+            b. Split line by comma into parts: ["S001", "Alice", "85", "90" "92"]
+            c. Extract student_id from parts[0]
+            d. Extract name from parts[1]
+            e. Create list from parts [2:]: grades = ["85", "90", "92"]
+            f. grades = [int(score) for score in grades]
+            g. Create student_info dict: {"name": Alice, "grades": [85, 90, 92]}
+            h. Add to dictionary: students[student_id] = student_info
+        5. Return dictionary
+        6. File closes automatically (using 'with')
+
+    # Function: add_student_to_file
+    # Inputs: filename(file), student_id(key), name(value), grades(value)-list
+    # Output: None
+    # Steps: 
+        1. Open file in append mode ("a")
+        2. Convert grades to comma-seperated string: grades_str = ",".join(str(score) for score in grades)
+        3. format the line: line = f"{student_id},{name},{grades_str}\n"
+        4. Write line to file
+        5. File closes automatically (using 'with')
+    
+    # Function: display_file_contents
+    # Inputs: filename (file)
+    # Output: string (print file contents)
+    # Steps:
+        1. Open file in read mode ("r")
+        2. Read entire file content
+        3. Print the content
+        4. File closes automatically (using 'with')
