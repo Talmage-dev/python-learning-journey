@@ -11,9 +11,9 @@ def save_students_to_file(students, filename):
         for student_id, student_info in students.items():
             # b. Get student info (name, grades)
             name = student_info["name"]
-            grades = student_info["grades"] 
+            grades_str = student_info["grades"] 
             # c. Format the grades list into a string (join with commas)
-            grades = ",".join(str(score) for score in grades)
+            grades = ",".join(str(score) for score in grades_str)
             # d. Create the line: "student_id,name,grades_string\n"
             line = f"{student_id},{name},{grades}\n"
             # e. Write this line to the file

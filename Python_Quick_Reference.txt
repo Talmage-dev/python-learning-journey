@@ -1,0 +1,349 @@
+Python Quick Reference - Most Common Operations
+
+VARIABLES & DATA TYPES: (Day 1)
+
+# Creating variables
+name = "Alice"
+age = 25
+price = 19.99
+is_active = True
+
+# Type conversion
+int("25")           # String to integer
+float("19.99")      # String to float
+str(25)             # Number to string
+
+STRINGS (Day 5)
+
+# Common string operations
+text.upper()                    # "HELLO"
+text.lower()                    # "hello"
+text.strip()                    # Remove whitespace
+text.split(",")                 # Split by comma
+",".join(list)                  # Join list with comma
+",".join(str(x) for x in list)  # Join numbers with comma
+text.replace("old", "new")      # Replace text
+text.startswith("H")            # Check start
+"word" in text                  # Check if contains
+
+LISTS (Day 5)
+
+# Creating and modifying
+my_list = [1, 2, 3]
+my_list.append(4)               # Add to end
+my_list.remove(2)               # Remove value
+my_list.pop()                   # Remove last
+my_list[0]                      # Access by index
+my_list[1:3]                    # Slice [1, 2]
+len(my_list)                    # Get length
+max(my_list)                    # Get maximum
+min(my_list)                    # Get minimum
+sum(my_list)                    # Sum all items
+
+# Looping
+for item in my_list:
+    print(item)
+
+DICTIONARIES (Day 6)
+
+# Creating and accessing
+person = {"name": "Alice", "age": 25}
+person["name"]                          # Access value
+person.get("name")                      # Safe access
+person["email"] = "a@b.com"             # Add/modify
+del person["age"]                       # Delete key
+"name" in person                        # Check if key exists
+len(person)                             # Number of items
+
+# Looping
+for key in person:                      # Loop keys
+for value in person.values():           # Loop values
+for key, value in person.items():       # Loop both
+
+CONDITIONALS (Day 4)
+
+# If statements
+if condition:
+    # code
+elif other_condition:
+    # code
+else:
+    # code
+
+# Common comparisons
+x == y      # Equal
+x != y      # Not equal
+x > y       # Greater than
+x < y       # Less than
+x >= y      # Greater or equal
+x <= y      # Less or equal
+
+# Logical operators
+if x > 0 and y > 0:     # Both true
+if x > 0 or y > 0:      # At least one true
+if not condition:       # Opposite
+
+LOOPS (Day 4)
+
+# For loop
+for i in range(5):              # 0 to 4
+for i in range(1, 6):           # 1 to 5
+for item in my_list:            # Loop list
+for key, value in dict.items(): # Loop dict
+
+# While loop
+while condition:
+    # code
+    
+# Loop control
+break       # Exit loop
+continue    # Skip to next iteration
+
+FUNCTIONS (Day 4)
+
+# Basic function
+def function_name(param1, param2):
+    result = param1 + param2
+    return result
+
+# With default parameter
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+# Calling functions
+result = function_name(5, 3)
+
+FILE I/O (Day 7)
+
+# Reading file
+with open("file.txt", "r") as file:
+    content = file.read()           # Read all
+    lines = file.readlines()        # Read as list
+    for line in file:               # Loop lines
+        print(line.strip())
+
+# Writing file
+with open("file.txt", "w") as file:
+    file.write("text\n")
+    file.writelines(list_of_lines)
+
+# Appending to file
+with open("file.txt", "a") as file:
+    file.write("more text\n")
+
+# CSV-like operations
+line = "id,name,value"
+parts = line.strip().split(",")     # Split
+data = ",".join(parts)              # Join
+
+ERROR HANDLING (Day 8)
+
+# Basic try/except
+try:
+    risky_operation()
+except ErrorType:
+    print("Error occurred")
+
+# Common exceptions
+try:
+    int("abc")
+except ValueError:
+    print("Invalid number")
+
+try:
+    open("missing.txt")
+except FileNotFoundError:
+    print("File not found")
+
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+# Multiple exceptions
+try:
+    operation()
+except ValueError:
+    print("Value error")
+except TypeError:
+    print("Type error")
+
+COMPREHENSIONS (Day 8)
+
+# List comprehensions
+squares = [x**2 for x in range(5)]
+evens = [x for x in numbers if x % 2 == 0]
+upper = [name.upper() for name in names]
+
+# Dictionary comprehensions
+squares = {x: x**2 for x in range(5)}
+filtered = {k: v for k, v in dict.items() if v > 10}
+
+COMMON PATTERNS:
+
+Load Dictionary from File:
+def load_data(filename):
+    data = {}
+    with open(filename, "r") as file:
+        for line in file:
+            parts = line.strip().split(",")
+            key = parts[0]
+            value = parts[1]
+            data[key] = value
+    return data
+
+Save Dictionary to File:
+def save_data(data, filename):
+    with open(filename, "w") as file:
+        for key, value in data.items():
+            line = f"{key},{value}\n"
+            file.write(line)
+
+Safe User Input:
+def get_number():
+    while True:
+        try:
+            return int(input("Enter number: "))
+        except ValueError:
+            print("Invalid! Try again.")
+
+Calculate Average:
+average = sum(numbers) / len(numbers)
+
+Filter and Transform:
+# Get doubled positive numbers
+result = [x * 2 for x in numbers if x > 0]
+
+QUICK TIPS:
+1) Use 'with open()' for files (auto-closes)
+2) Use '.items()' when looping dictionaries
+3) Use comprehensions for simple transformations
+4) Always handle errors for file operations
+5) Convert to string before joining: str(x)
+6) Use f-strings for formatting: f"{var}
+7) Check 'if key in dict' before accessing
+8) Use 'try/except' for risky operations
+
+MODULES & IMPORTS (Day 9)
+# Basic import
+import math
+math.sqrt(25)               # Use with module prefix
+
+# Import specific functions
+from math import sqrt, pi
+sqrt(25)                    # Use directly, no prefix
+
+# Import with alias
+import datetime as dt
+dt.datetime.now()           # Use shorter name
+
+# Import multiple
+import os
+import json
+import random
+
+MATH MODULE
+import math
+
+math.sqrt(16)               # Square root: 4.0
+math.ceil(4.3)              # Round up: 5
+math.floor(4.7)             # Round down: 4
+math.pi                     # Pi constant: 3.14159...
+math.pow(2, 3)              # Power: 8.0
+
+RANDOM MODULE
+import random
+
+random.randint(1, 10)           # Random int 1-10
+random.random()                 # Random float 0.0-1.0
+random.choice([1, 2, 3])        # Pick random from list
+random.shuffle(my_list)         # Shuffle list in place
+random.sample(my_list, 3)       # Pick 3 random items
+
+DATETIME MODULE
+from datetime import datetime, date
+
+# Current date/time
+now = datetime.now()
+today = date.today()
+
+# Format date/time
+formatted = now.strftime("%Y-%m-%d %H:%M:%S")
+# Output: "2025-10-15 14:30:45"
+
+# Common format codes:
+# %Y - Year (2025)
+# %m - Month (01-12)
+# %d - Day (01-31)
+# %H - Hour (00-23)
+# %M - Minute (00-59)
+# %S - Second (00-59)
+
+OS MODULE
+import os
+
+os.getcwd()                     # Get current directory
+os.listdir(".")                 # List files in directory
+os.path.exists("file.txt")      # Check if file exists
+os.path.isfile("file.txt")      # Check if it's a file
+os.path.isdir("folder")         # Check if it's a directory
+os.path.join("folder", "file")  # Join paths safely
+
+JSON MODULE
+import json
+
+# Dict to JSON string
+data = {"name": "Alice", "age": 25}
+json_string = json.dumps(data)
+
+# JSON string to dict
+data = json.loads(json_string)
+
+# Save to file
+with open("data.json", "w") as f:
+    json.dump(data, f)
+
+# Load from file
+with open("data.json", "r") as f:
+    data = json.load(f)
+
+CREATING OWN MODULE
+# File: my_utils.py
+def my_function():
+    return "Hello"
+
+def another_function(x):
+    return x * 2
+
+# File: main.py
+import my_utils
+
+result = my_utils.my_function()
+
+COMMON PATTERNS:
+
+Generate Random Test Data
+import random
+
+names = ["Alice", "Bob", "Charlie"]
+ages = [random.randint(18, 65) for _ in range(10)]
+user = random.choice(names)
+
+Create Timestamp
+from datetime import datetime
+
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+Check File Before Opening
+import os
+
+if os.path.exists("file.txt"):
+    with open("file.txt", "r") as f:
+        content = f.read()
+
+Save Data as JSON
+import json
+
+data = {"key": "value"}
+with open("data.json", "w") as f:
+    json.dump(data, f)
