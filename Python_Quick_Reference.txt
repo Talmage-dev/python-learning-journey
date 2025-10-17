@@ -347,3 +347,79 @@ import json
 data = {"key": "value"}
 with open("data.json", "w") as f:
     json.dump(data, f)
+
+---
+
+# **3. QUICK REFERENCE ADDITIONS**
+
+Add to: `/Python_Quick_Reference.txt`
+
+```markdown
+## OBJECT-ORIENTED PROGRAMMING (Day 10)
+
+# Creating a Class
+class ClassName:
+    def __init__(self, param1, param2):
+        self.attribute1 = param1
+        self.attribute2 = param2
+    
+    def method_name(self):
+        return self.attribute1
+
+# Creating Objects
+obj = ClassName(value1, value2)
+result = obj.method_name()
+
+# Instance Variables (unique to each object)
+class Dog:
+    def __init__(self, name):
+        self.name = name  # Each dog has own name
+
+# Class Variables (shared by all objects)
+class Student:
+    total_students = 0  # Shared by all students
+    
+    def __init__(self, name):
+        self.name = name
+        Student.total_students += 1
+
+# Class Methods
+class MyClass:
+    count = 0
+    
+    @classmethod
+    def get_count(cls):
+        return cls.count
+
+# Classes Working Together
+class Book:
+    def __init__(self, title):
+        self.title = title
+
+class Library:
+    def __init__(self):
+        self.books = []
+    
+    def add_book(self, book):
+        self.books.append(book)
+
+# Common Patterns
+
+# Safe list removal
+self.items = [item for item in self.items if condition]
+
+# Check empty before calculation
+def get_average(self):
+    if not self.grades:
+        return 0
+    return sum(self.grades) / len(self.grades)
+
+# Find item in collection
+def find_item(self, name):
+    for item in self.items:
+        if item.name == name:
+            return item
+    return None  # After checking all
+
+# Calculate across objects
+total = sum(obj.get_value() for obj in self.objects)
