@@ -423,3 +423,150 @@ def find_item(self, name):
 
 # Calculate across objects
 total = sum(obj.get_value() for obj in self.objects)
+
+## COMPREHENSIVE PROJECT PATTERNS (Day 11)
+
+# Class with File Persistence
+class DataManager:
+    def __init__(self):
+        self.items = []
+    
+    def save_to_file(self, filename):
+        try:
+            data = [item.to_dict() for item in self.items]
+            with open(filename, 'w') as f:
+                json.dump(data, f, indent=2)
+            return True
+        except Exception as e:
+            print(f"Error: {e}")
+            return False
+    
+    def load_from_file(self, filename):
+        try:
+            with open(filename, 'r') as f:
+                data = json.load(f)
+                self.items = [Item(d["field1"], d["field2"]) for d in data]
+            return True
+        except FileNotFoundError:
+            return False
+
+# Object to Dictionary
+def to_dict(self):
+    return {
+        "field1": self.field1,
+        "field2": self.field2
+    }
+
+# Input Validation Loop
+def get_valid_number(prompt):
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Must be positive!")
+                continue
+            return value
+        except ValueError:
+            print("Invalid number!")
+
+# Menu-Driven Interface
+def main():
+    while True:
+        display_menu()
+        choice = input("Choice: ").strip()
+        
+        if choice == "1":
+            # Handle option 1
+        elif choice == "2":
+            # Handle option 2
+        elif choice == "exit":
+            break
+        else:
+            print("Invalid choice!")
+
+# Delete from List by Index
+def delete_item(self, index):
+    if 0 <= index < len(self.items):
+        return self.items.pop(index)
+    return None
+
+# Filter with Comprehension
+filtered = [item for item in collection if item.property == value]
+
+# Sum with Generator Expression
+total = sum(item.amount for item in collection if item.type == "specific")
+
+# Calculate Balance
+balance = get_total_income() - get_total_expenses()
+
+# Display with Enumeration
+for i, item in enumerate(items):
+    print(f"{i}. {item.name}")
+
+---
+
+## COMMON APPLICATION PATTERNS
+
+# CRUD Operations (Create, Read, Update, Delete)
+
+# Create
+def add_item(self, data):
+    item = Item(data)
+    self.items.append(item)
+
+# Read
+def get_all_items(self):
+    return self.items
+
+def get_item_by_id(self, id):
+    for item in self.items:
+        if item.id == id:
+            return item
+    return None
+
+# Update
+def update_item(self, index, new_data):
+    if 0 <= index < len(self.items):
+        self.items[index].update(new_data)
+        return True
+    return False
+
+# Delete
+def delete_item(self, index):
+    if 0 <= index < len(self.items):
+        return self.items.pop(index)
+    return None
+
+---
+
+## ERROR HANDLING PATTERNS
+
+# File Operations
+try:
+    with open(filename, mode) as f:
+        # operations
+    return True
+except FileNotFoundError:
+    print("File not found")
+    return False
+except PermissionError:
+    print("No permission")
+    return False
+except Exception as e:
+    print(f"Error: {e}")
+    return False
+
+# User Input
+try:
+    value = type_conversion(input("Prompt: "))
+    return value
+except ValueError:
+    print("Invalid input")
+    return None
+
+# JSON Operations
+try:
+    data = json.load(file)
+except json.JSONDecodeError:
+    print("Corrupted file")
+    return None
