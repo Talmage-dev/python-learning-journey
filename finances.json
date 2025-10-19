@@ -1,16 +1,35 @@
-[
-  {
-    "date": "2025-10-18",
-    "type": "income",
-    "amount": 495.61,
-    "category": "Salary",
-    "description": "W&I"
-  },
-  {
-    "date": "2025-10-18",
-    "type": "income",
-    "amount": 1200.0,
-    "category": "Salary",
-    "description": "Wages"
+{
+  "transactions": [
+    {
+      "date": "2025-10-19",
+      "type": "income",
+      "amount": 1200.0,
+      "category": "Salary",
+      "description": "Wages"
+    },
+    {
+      "date": "2025-10-19",
+      "type": "income",
+      "amount": 411.21,
+      "category": "Salary",
+      "description": "Winz"
+    },
+    {
+      "date": "2025-10-19",
+      "type": "expense",
+      "amount": 198.65,
+      "category": "Food",
+      "description": "Pak 'n' Save"
+    },
+    {
+      "date": "2025-10-19",
+      "type": "expense",
+      "amount": 100.0,
+      "category": "Transport",
+      "description": "Petrol"
+    }
+  ],
+  "budgets": {
+    "Food": 200.0
   }
-]
+}

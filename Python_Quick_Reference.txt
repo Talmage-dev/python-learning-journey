@@ -1,6 +1,9 @@
-Python Quick Reference - Most Common Operations
+---
 
-VARIABLES & DATA TYPES: (Day 1)
+# **1. QUICK REFERENCE ADDITIONS**
+
+```markdown
+## VARIABLES & DATA TYPES: (Day 1)
 
 # Creating variables
 name = "Alice"
@@ -570,3 +573,121 @@ try:
 except json.JSONDecodeError:
     print("Corrupted file")
     return None
+
+---
+
+# **3. QUICK REFERENCE ADDITIONS**
+
+```markdown
+## ADVANCED PATTERNS (Day 12)
+
+# enumerate() - Get Index + Item
+for index, item in enumerate(collection):
+    print(f"{index}. {item}")
+
+# Similar patterns:
+# Dictionary: for key, value in dict.items()
+# List: for index, item in enumerate(list)
+
+# Optional Parameters for Partial Updates
+def edit_item(index, field1=None, field2=None, field3=None):
+    if field1: obj.field1 = field1
+    if field2: obj.field2 = field2
+    if field3: obj.field3 = field3
+
+# Usage:
+edit_item(0, field1="new")  # Only update field1
+edit_item(0, field2="x", field3="y")  # Update multiple
+
+# defaultdict - Auto-initialize Missing Keys
+from collections import defaultdict
+
+# With list
+data = defaultdict(list)
+data["key"].append(item)  # Works even if "key" doesn't exist
+
+# With dict
+data = defaultdict(lambda: {"count": 0, "total": 0})
+data["key"]["count"] += 1
+
+# With int (for counting)
+counts = defaultdict(int)
+counts["word"] += 1
+
+# CSV Export
+import csv
+
+with open("file.csv", "w", newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(['Header1', 'Header2'])  # Header
+    for item in items:
+        writer.writerow([item.field1, item.field2])  # Data
+
+# String Slicing for Dates
+date = "2025-10-23"
+year_month = date[:7]   # "2025-10"
+year = date[:4]         # "2025"
+month = date[5:7]       # "10"
+day = date[8:10]        # "23"
+
+# Retry Loop Pattern
+while True:
+    user_input = input("Enter value (or 'b' to go back): ")
+    
+    if user_input.lower() == 'b':
+        break  # Exit
+    
+    try:
+        # Process input
+        if valid:
+            break  # Success - exit
+        else:
+            print("Invalid! Try again.")
+            continue  # Ask again
+    except ValueError:
+        print("Error! Try again.")
+        continue
+
+# Pause Function
+def pause():
+    input("\nPress Enter to continue...")
+
+# Usage after displaying info
+print("=== Results ===")
+print(data)
+pause()  # Wait before continuing
+
+# Multiple Data Types in JSON
+# Save
+data = {
+    "items": [item.to_dict() for item in items],
+    "settings": settings_dict,
+    "metadata": {"version": 1.0}
+}
+json.dump(data, file)
+
+# Load with defaults
+data = json.load(file)
+items = data.get("items", [])
+settings = data.get("settings", {})
+
+# Comprehension with Multiple Conditions
+# AND condition
+result = [x for x in items if x.type == "A" and x.value > 10]
+
+# OR condition
+result = [x for x in items if x.type == "A" or x.type == "B"]
+
+# Nested condition
+result = [x for x in items if x.active and (x.value > 10 or x.priority == "high")]
+
+# Group and Aggregate Pattern
+from collections import defaultdict
+
+grouped = defaultdict(lambda: {"count": 0, "total": 0})
+for item in items:
+    grouped[item.category]["count"] += 1
+    grouped[item.category]["total"] += item.amount
+
+# Convert to regular dict
+result = dict(grouped)
