@@ -1,20 +1,9 @@
-class Library:
-    def __init__(self):
-        self.books = []
+price = 19.99
+quantity = 3
+tax_rate = 0.08
 
-    def add_book(self, title, author):
-        self.books.append({"title": title, "author": author})
+subtotal = price * quantity
+tax = subtotal * tax_rate
+total = subtotal + tax
 
-    def get_book_count(self):
-        return len(self.books)
-    
-    def display_books(self):
-        for book in self.books:
-            print(book["title"])
-
-lib = Library()  
-lib.add_book("Yo", "Poo")
-lib.add_book("Wax On", "Daniel")
-
-lib.display_books()
-print(lib.get_book_count())
+print(f"Total: ${total:.2f}")

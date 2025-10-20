@@ -691,3 +691,194 @@ for item in items:
 
 # Convert to regular dict
 result = dict(grouped)
+
+
+## ADVANCED OOP (Day 13)
+
+# Inheritance
+class Parent:
+    def __init__(self, attr):
+        self.attr = attr
+    
+    def method(self):
+        return "parent"
+
+class Child(Parent):
+    def __init__(self, attr, child_attr):
+        super().__init__(attr)  # Call parent's init
+        self.child_attr = child_attr
+    
+    def child_method(self):
+        return "child"
+
+# Polymorphism (Method Override)
+class Animal:
+    def speak(self):
+        return "sound"
+
+class Dog(Animal):
+    def speak(self):  # Override
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):  # Override
+        return "Meow!"
+
+# Using super() to extend
+class Child(Parent):
+    def method(self):
+        parent_result = super().method()
+        return f"{parent_result} + child"
+
+# Inheritance vs Composition
+# Inheritance (IS-A)
+class Dog(Animal):  # Dog IS AN Animal
+    pass
+
+# Composition (HAS-A)
+class Browser:
+    def __init__(self):
+        self.history = Stack()  # Browser HAS A Stack
+
+---
+
+## DATA STRUCTURES - STACK (Day 13)
+
+# Stack (LIFO - Last In, First Out)
+class Stack:
+    def __init__(self):
+        self.items = []
+    
+    def push(self, item):
+        """Add to top"""
+        self.items.append(item)
+    
+    def pop(self):
+        """Remove from top"""
+        if not self.is_empty():
+            return self.items.pop()
+        return None
+    
+    def peek(self):
+        """Look at top"""
+        if not self.is_empty():
+            return self.items[-1]
+        return None
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def size(self):
+        return len(self.items)
+
+# Stack Usage
+stack = Stack()
+stack.push(1)
+stack.push(2)
+top = stack.pop()    # 2 (last in, first out)
+peek = stack.peek()  # 1
+
+# Stack Applications
+# 1. Reverse string
+def reverse(text):
+    stack = Stack()
+    for char in text:
+        stack.push(char)
+    result = ""
+    while not stack.is_empty():
+        result += stack.pop()
+    return result
+
+# 2. Undo functionality
+class Editor:
+    def __init__(self):
+        self.history = Stack()
+    
+    def save_state(self, state):
+        self.history.push(state)
+    
+    def undo(self):
+        return self.history.pop()
+
+---
+
+## DATA STRUCTURES - QUEUE (Day 13)
+
+# Queue (FIFO - First In, First Out)
+class Queue:
+    def __init__(self):
+        self.items = []
+    
+    def enqueue(self, item):
+        """Add to rear"""
+        self.items.append(item)
+    
+    def dequeue(self):
+        """Remove from front"""
+        if not self.is_empty():
+            return self.items.pop(0)
+        return None
+    
+    def front(self):
+        """Look at front"""
+        if not self.is_empty():
+            return self.items[0]
+        return None
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def size(self):
+        return len(self.items)
+
+# Queue Usage
+queue = Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+front = queue.dequeue()  # 1 (first in, first out)
+peek = queue.front()     # 2
+
+# Queue Applications
+# 1. Customer service
+class Service:
+    def __init__(self):
+        self.customers = Queue()
+    
+    def add_customer(self, name):
+        self.customers.enqueue(name)
+    
+    def serve_next(self):
+        return self.customers.dequeue()
+
+# 2. Print queue
+class Printer:
+    def __init__(self):
+        self.queue = Queue()
+    
+    def add_job(self, doc):
+        self.queue.enqueue(doc)
+    
+    def print_next(self):
+        return self.queue.dequeue()
+
+---
+
+## STACK VS QUEUE
+
+# When to use Stack (LIFO):
+- Undo/Redo
+- Browser back button
+- Reverse order
+- Backtracking
+- Expression evaluation
+
+# When to use Queue (FIFO):
+- First-come, first-served
+- Task scheduling
+- Print queue
+- Customer service
+- Breadth-first search
+
+# Quick comparison:
+Stack: [3][2][1] ← push/pop from top
+Queue: [1][2][3] → enqueue rear, dequeue front
