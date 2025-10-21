@@ -882,3 +882,144 @@ class Printer:
 # Quick comparison:
 Stack: [3][2][1] ← push/pop from top
 Queue: [1][2][3] → enqueue rear, dequeue front
+
+## LINKED LISTS (Day 14)
+
+# Singly Linked List Node
+class Node:
+    def __init__(self, data):
+        self.data = data    # Value
+        self.next = None    # Pointer to next
+
+# Singly Linked List
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    
+    # Append (add to end)
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+    
+    # Prepend (add to beginning)
+    def prepend(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+    
+    # Delete
+    def delete(self, data):
+        if self.head and self.head.data == data:
+            self.head = self.head.next
+            return True
+        current = self.head
+        while current and current.next:
+            if current.next.data == data:
+                current.next = current.next.next
+                return True
+            current = current.next
+        return False
+    
+    # Search
+    def search(self, data):
+        current = self.head
+        while current:
+            if current.data == data:
+                return True
+            current = current.next
+        return False
+
+# Traversal Pattern
+current = self.head
+while current:
+    # Process current
+    current = current.next
+
+---
+
+# Doubly Linked List Node
+class DNode:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+# Doubly Linked List
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+    
+    # Append
+    def append(self, data):
+        new_node = DNode(data)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+            return
+        self.tail.next = new_node
+        new_node.prev = self.tail
+        self.tail = new_node
+    
+    # Delete (3 cases: head, tail, middle)
+    def delete(self, data):
+        current = self.head
+        while current:
+            if current.data == data:
+                if current.prev:
+                    current.prev.next = current.next
+                else:  # Delete head
+                    self.head = current.next
+                if current.next:
+                    current.next.prev = current.prev
+                else:  # Delete tail
+                    self.tail = current.prev
+                return True
+            current = current.next
+        return False
+
+---
+
+# When to Use Linked Lists
+
+Use Linked Lists:
+- Frequent insertions/deletions
+- Unknown size
+- Don't need random access
+- Dynamic growth
+
+Use Arrays:
+- Need fast index access
+- Known size
+- Few modifications
+- Cache performance matters
+
+---
+
+# Common Patterns
+
+# Find last node
+current = self.head
+while current.next:
+    current = current.next
+# current is last node
+
+# Find node before target
+current = self.head
+while current and current.next:
+    if current.next.data == target:
+        break
+    current = current.next
+
+# Count nodes
+count = 0
+current = self.head
+while current:
+    count += 1
+    current = current.next
