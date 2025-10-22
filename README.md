@@ -10,7 +10,7 @@ Learning Python, C, and Assembly from October 2025 to October 2026.
 - **Phase 5 (Jul-Oct 2026):** Integration & Specialization
 
 ## Current Progress
-- Days completed: 7
+- Days completed: 15
 - Current focus: Python fundamentals
 
 ## Projects
