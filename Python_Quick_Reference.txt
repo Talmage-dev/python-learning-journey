@@ -1023,3 +1023,114 @@ current = self.head
 while current:
     count += 1
     current = current.next
+
+
+## LEARNING METHOD - "WAX ON WAX OFF" (Day 15)
+
+# Four-Step Learning Process
+1. Learn the Material (theory, concepts, why)
+2. See It In Action (examples, step-by-step)
+3. "Wax On Wax Off" (write from memory, multiple times)
+4. Apply with Exercises (build real projects)
+
+# "Wax On Wax Off" Rules
+- Write methods from memory (no looking!)
+- Random order
+- Must complete ALL methods TWICE correctly
+- Immediate feedback on mistakes
+- Move to next topic when mastered
+
+# Why It Works
+- Active recall (retrieval from memory)
+- Spaced repetition (done twice with gaps)
+- Pattern recognition (see patterns repeatedly)
+- Immediate feedback (learn from mistakes)
+- Line-by-line understanding (comments force comprehension)
+
+---
+
+## COMMON MISTAKES & FIXES (Day 15)
+
+# Mistake 1: Not moving to next node
+# ❌ Wrong
+while current:
+    if current.data == target:
+        return True
+    # Missing: current = current.next
+
+# ✓ Right
+while current:
+    if current.data == target:
+        return True
+    current = current.next
+
+# Mistake 2: Backwards logic
+# ❌ Wrong
+if not self.items:
+    return self.items[-1]
+
+# ✓ Right
+if self.items:
+    return self.items[-1]
+return None
+
+# Mistake 3: Not saving returned value
+# ❌ Wrong
+self.queue.dequeue()
+self.stack.push()
+
+# ✓ Right
+item = self.queue.dequeue()
+self.stack.push(item)
+
+# Mistake 4: Comparing list to number
+# ❌ Wrong
+return self.items == 0
+
+# ✓ Right
+return len(self.items) == 0
+
+# Mistake 5: Wrong method
+# ❌ Wrong
+return self.items.remove[0]
+
+# ✓ Right
+return self.items.pop(0)
+
+# Mistake 6: Checking wrong node in delete
+# ❌ Wrong
+if current.data == data:
+    current.next = current.next.next
+
+# ✓ Right
+if current.next.data == data:
+    current.next = current.next.next
+
+---
+
+## COMBINING DATA STRUCTURES (Day 15)
+
+# Task Manager Pattern
+class TaskManager:
+    def __init__(self):
+        self.pending = Queue()      # FIFO - tasks to do
+        self.completed = Stack()    # LIFO - can undo
+        self.history = LinkedList() # Permanent record
+    
+    def add_task(self, task):
+        self.pending.enqueue(task)
+        self.history.append(task)
+    
+    def complete_next(self):
+        task = self.pending.dequeue()  # Get from queue
+        if task:
+            self.completed.push(task)   # Add to stack
+        return task
+    
+    def undo_completion(self):
+        task = self.completed.pop()     # Get from stack
+        if task:
+            self.pending.enqueue(task)  # Add back to queue
+        return task
+
+# Key: Save returned values when transferring between structures

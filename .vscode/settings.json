@@ -2,5 +2,10 @@
     "files.associations": {
         "DOOMNET.C": "cpp"
     },
-    "codium.codeCompletion.enable": false
+    "codium.codeCompletion.enable": false,
+    "python.analysis.extraPaths": [
+        "./Python/week02_fundamentals/exercises/Day_13",
+        "./Python/week_03_data_structures/exercises/Day_14",
+        "./Python/Modules"
+    ]
 }
