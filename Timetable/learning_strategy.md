@@ -21,10 +21,17 @@ Focus on **retention and application** rather than just coverage.
 
 ## Daily Routine
 
-### Morning (15 minutes)
-**Typing Practice**
-- Keybr.com - 15 minutes
+### Morning Warm-Up (30 minutes total)
+
+**1. Typing Practice (15 minutes)**
+- Keybr.com
 - Track WPM and accuracy
+
+**2. Mini "Wax On Wax Off" (10-15 minutes)**
+- 5-7 random methods from **last 3 days** of topics
+- Quick retention check
+- Gets brain in "coding mode"
+- Builds recall speed
 
 ### Learning Session (2-4 hours)
 **Four-Step Process:**
@@ -33,11 +40,11 @@ Focus on **retention and application** rather than just coverage.
 3. "Wax On Wax Off" (practice from memory)
 4. Apply with Projects (build something)
 
-### End of Day (10-15 minutes)
-**Mini "Wax On Wax Off"**
-- 5-7 random methods from **last 3 days** of topics
-- Quick retention check
-- Builds recall speed
+### End of Day (5-10 minutes)
+**Reflection & Planning**
+- What did you learn today?
+- What needs more practice?
+- Plan tomorrow's focus
 
 ---
 
