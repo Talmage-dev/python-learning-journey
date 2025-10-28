@@ -2,7 +2,7 @@
 
 ---
 
-## **Date:** October 27, 2025 (Monday - After Church Camp)
+## **Date:** October 26, 2025 (Sunday - After Church Camp)
 
 ---
 
@@ -438,7 +438,7 @@ All challenges overcome through practice and persistence!
 Roadmap Status:
 
 AHEAD OF SCHEDULE! 🚀
-Current: Day 18 (Oct 27)
+Current: Day 18 (Oct 26)
 Original plan: Should be finishing Week 1-2 (Fundamentals)
 Actual progress: Week 5-6 (Data Structures) - deep practice
 Ahead by: ~2-3 weeks
@@ -473,7 +473,7 @@ Result: Weak areas became strong areas in one day!
 
 - - -
 
-Tomorrow's Goals (Day 19 - Oct 28):
+Tomorrow's Goals (Day 19 - Oct 27):
 
 Morning:
 - Typing practice

@@ -355,7 +355,7 @@ This validates the entire approach! 💪
 
 - - -
 
-Tomorrow's Goals (Day 20 - Oct 29):
+Tomorrow's Goals (Day 20 - Oct 28):
 
 Morning:
 - Typing practice (aim for 35+ WPM)
