@@ -1,3 +1,5 @@
+from collections import deque   # for graph traversal
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -318,3 +320,68 @@ class HashTable:
         for i, bucket in enumerate(self.table):
             if bucket:
                 print(f"Index {i}: {bucket}")
+
+class Graph:
+    def __init__(self):
+        self.graph = {}         # {node: [list of neighbours]}
+    
+    def add_node(self, node):
+        """Add a node to the graph"""
+        if node not in self.graph:
+            self.graph[node] = []
+
+    def add_edge(self, node1, node2):
+        """Add an edge between two nodes (undirected)"""
+        # Add node if they don't exist
+        self.add_node(node1)
+        self.add_node(node2)
+
+        # Add edge both ways
+        if node2 not in self.graph[node1]:
+            self.graph[node1].append(node2)
+        if node1 not in self.graph[node2]:
+            self.graph[node2].append(node1)
+    
+    def display(self):
+        for node, neighbours in self.graph.items():         # for key, value in dict.items():
+            print(f"{node}: {neighbours}")
+
+    def get_neighbour(self, node):
+        """Get all neighbours of node"""
+        return self.graph.get(node, [])
+
+    # BFS (Breadth-First Search)
+    def bfs(self, start):
+        """Breadth-First search"""
+        visited = set()             # Track visited nodes
+        queue = deque([start])      # Queue for BFS
+        visited.add(start)
+        result = []                 # Order of visits
+    
+        while queue:
+            node = queue.popleft()  # Get front of queue
+            result.append(node)     # Add to result(order of visits)
+
+            # Visit all unvisited neighbours
+            for neighbour in self.graph[node]:       # for every neighbour of node
+                if neighbour not in visited:    # if not in set
+                    visited.add(neighbour)      # add to set
+                    queue.append(neighbour)     # add to queue
+    
+        return result               # return order of visits
+    
+    # DFS (Depth-First Search)
+    def dfs(self, start, visited=None):
+        """Depth-first search (recursive)"""
+        if visited is None:
+            visited = set()
+    
+        visited.add(start)
+        result = [start]
+
+        #Visit each unvisited neighbour
+        for neighbour in self.graph[start]:
+            if neighbour not in visited:
+                result.extend(self.dfs(neighbour, visited))
+    
+        return result
