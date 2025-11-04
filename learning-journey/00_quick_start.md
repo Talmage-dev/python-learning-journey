@@ -1,15 +1,15 @@
 # Quick Start - Daily Command Center
 
-**Last Updated:** November 3, 2025 (Day 25)  
+**Last Updated:** November 4, 2025 (Day 26)  
 **Current Milestone:** Data Structures (85% complete)
 
 ---
 
-## 🎯 TODAY'S FOCUS (Day 25)
+## 🎯 TODAY'S FOCUS (Day 27)
 
-**Main Goal:** Insertion Sort + Hash Tables Practice
+**Main Goal:** Hash Tables to 90%+ (move to maintenance!), Graphs Practice
 
-**Phase:** Learning new algorithm + Intensive practice on weak areas
+**Phase:** Final push on Hash Tables, continue Graphs intensive practice
 
 ---
 
@@ -32,33 +32,27 @@ Estimated: 1-2 weeks to completion
 
 ## 🟢 MASTERED (Maintenance Phase - 90%+)
 
-Rotation schedule: 2x per week, then space out
-
 | Topic | Mastery | Next Practice | Last Practiced |
 |-------|---------|---------------|----------------|
-| Stack | 95% | Mon Nov 4 | Nov 3 |
-| Queue | 95% | Thu Nov 7 | Nov 1 |
-| Singly Linked List | 90% | Mon Nov 11 | Oct 28 |
+| Stack | 95% | Fri Nov 8 | Nov 3 ✅ |
+| Queue | 95% | Mon Nov 11 | Nov 4 ✅ |
+| Singly Linked List | 90% | Wed Nov 6 | Oct 28 |
 | Doubly Linked List | 90% | Thu Nov 14 | Oct 29 |
-| Selection Sort | 90% | Tue Nov 4 | Nov 1 |
-| Insertion Sort | 95% | Tue Nov 4 | Nov 3 |
+| Selection Sort | 90% | Tue Nov 5 | Nov 1 |
+| Insertion Sort | 95% | Wed Nov 6 | Nov 3 |
 
-**Today's Maintenance:** Stack (15 min)
+**Today's Maintenance:** Singly Linked List (15 min)
 
 ---
 
 ## 🟡 INTENSIVE PRACTICE (60-89%)
 
-Practice daily until 90%+
-
-| Topic | Mastery | Week # | Next Action |
-|-------|---------|--------|-------------|
-| Binary Search Tree | 85% | Week 2 | Move to maintenance soon! |
-| Bubble Sort | 85% | Week 2 | Speed drills |
-| Hash Tables | 80% | Week 3 | Continue use cases |
-| Graphs | 70% | Week 2 | Continue methods |
-
-**Today's Intensive:** Hash Tables (25-30 min)
+| Topic | Mastery | Week # | Target | Next Action |
+|-------|---------|--------|--------|-------------|
+| Binary Search Tree | 85% | Week 2 | 90% | Ready for maintenance soon |
+| Bubble Sort | 85% | Week 2 | 90% | Speed drills |
+| Hash Tables | 88% | Week 3 | 90% | **2 MORE USE CASES → 90%!** ← UPDATE! |
+| Graphs | 78% | Week 2 | 85% | 1-2 methods today ← UPDATE! |
 
 ---
 
@@ -76,47 +70,47 @@ Practice daily until 90%+
 
 ### Morning (60 min):
 ```
-⏰ 7:00-7:15   Typing Practice (15 min)
-⏰ 7:15-7:30   Maintenance: Stack (15 min)
-⏰ 7:30-8:00   Intensive: Hash Tables (30 min)
+⏰ 9:30-9:45   Typing Practice (15 min)
+⏰ 9:45-10:00  Maintenance: Singly Linked List (15 min)
+⏰ 10:00-10:30 Intensive: Hash Tables (30 min) - PUSH TO 90%!
 ```
 
 ### Main Session (1.5-2 hours):
 ```
-⏰ Time TBD    Learn: Insertion Sort
-               - Understand algorithm
-               - Compare to Bubble/Selection
-               - Implement from memory
-               - Test thoroughly
+⏰ Time TBD    Graphs Practice
+               - Implement 1-2 more methods
+               - 78% → 82% goal
 ```
 
 ### Evening (15 min):
 ```
-⏰ 8:00-8:05   Drill: Insertion Sort from memory
-⏰ 8:05-8:15   Review & Plan tomorrow
+⏰ Evening     Drill: Insertion Sort (complete it!)
+⏰ Evening     Review & Plan Day 28
 ```
 
 ---
 
 ## 🎯 TODAY'S SPECIFIC OBJECTIVES
 
-*Copy these to today's log (day-25-nov-03.md)*
+*Day 27 - Wednesday, November 6, 2025*
 
 ### Foundation:
-- [ ] Typing: 15 min
-- [ ] Maintenance: Stack - all methods under 10 min
+- [ ] Typing: 15 min practice
+- [ ] Maintenance: Singly Linked List - all methods under 15 min
 
 ### Intensive Practice:
-- [ ] Hash Tables: 2 use cases + 1 problem (80%→85% goal)
+- [ ] Hash Tables: 2 use cases (88%→90%+ GOAL!)
+  - This should push to maintenance!
+  - Focus on solidifying patterns
 
-### Learning:
-- [ ] Understand Insertion Sort algorithm
-- [ ] Implement from memory
-- [ ] Compare to Bubble & Selection sorts
+### Learning/Application:
+- [ ] Graphs: Implement 1-2 methods (78%→82%)
+  - Build on cycle detection
+  - Choose from: remove methods, graph properties, or algorithms
 
 ### Evening:
-- [ ] Drill: Insertion Sort from memory
-- [ ] Review: Score day + create tomorrow's objectives
+- [ ] Drill: Insertion Sort from memory (complete it!)
+- [ ] Review: Score day + update Quick Start for Day 28
 
 ---
 
@@ -124,27 +118,37 @@ Practice daily until 90%+
 
 ### Primary Focus:
 - Master Insertion Sort (3rd sorting algorithm) ✅ DONE Day 25!
-- Push Hash Tables to 90%+ (currently 85%)
-- Continue Graphs practice (70% → 80%)
+- Push Hash Tables to 90%+ (currently 88%) ← Almost there!
+- Continue Graphs practice (currently 78%)
 - Move BST to maintenance (ready at 85%)
 
 ### Success Criteria:
-- Daily scores averaging 85%+
-- Hash Tables feeling more automatic
+- Daily scores averaging 85%+ ✅ (Currently 95%!)
+- Hash Tables feeling more automatic ✅
 - Insertion Sort mastered ✅
 - At least 2 skills move to maintenance
 
-### Progress So Far (Day 25 - Monday Nov 3):
+### Progress So Far:
+**Day 25 (Mon):** 
 - ✅ Insertion Sort: 0% → 95% (mastered!)
-- ✅ Hash Tables: 80% → 85% (on track)
-- ✅ Learned sliding window technique
+- ✅ Hash Tables: 80% → 85%
 - ✅ First 100% daily score!
 
-**This Week Ahead (Tue-Sun):**
-- Continue Hash Tables intensive practice daily
-- Continue Graphs practice
-- Add Insertion Sort to maintenance rotation
-- Weekly review on Sunday Nov 9
+**Day 26 (Tue):**
+- ✅ Hash Tables: 85% → 88%
+- ✅ Graphs: 70% → 78%
+- ✅ Cycle detection mastered!
+- ✅ 90% daily score!
+
+**Day 27 (Wed) - TODAY:**
+- Goal: Hash Tables to 90%+ (move to maintenance!)
+- Goal: Graphs to 82%
+- Goal: Maintain 85%+ daily score
+
+**Remaining This Week (Thu-Sun):**
+- Push remaining topics toward 90%
+- Weekly review Sunday
+- Assess Milestone 3 completion readiness
 
 ---
 
@@ -152,15 +156,15 @@ Practice daily until 90%+
 
 ### Last 7 Days:
 ```
-Day 18: —/6 (—%)  [Old scoring system]
-Day 19: —/6 (—%)
-Day 20: —/6 (—%)
-Day 21: —/6 (—%)
-Day 22: —/6 (—%)
-Day 23: —/6 (—%)
-Day 24: 8/8 (100%) ✅ [Excellent day!]
+Day 20: (old system)
+Day 21: (old system)
+Day 22: (old system)
+Day 23: (old system)
+Day 24: (old system)
+Day 25: 5.0/5 (100%) 🔥 [First perfect day!]
+Day 26: 4.5/5 (90%) ✅ [Excellent!]
 
-Weekly Average: —% [Calculate on Sunday]
+Weekly Average (Days 25-26): 4.75/5 (95%) 🔥
 ```
 
 **Note:** New scoring system starts Day 25 (today)
@@ -302,19 +306,20 @@ By end of Week 5 (Nov 9):
 ### Recent Insights:
 - Function composition is powerful (Day 24)
 - Hash table patterns: counting vs "seen" (Day 24)
-- Sorting algorithms easier than data structures (Day 24)
-- Daily objectives system working great (100% Day 24)
+- Algorithms easier than data structures (Day 25)
+- Daily objectives system working great (100% Day 25)
+- **Hash tables store key-value pairs - the VALUE defines the pattern!** (Day 26) ← NEW!
 
 ### Next Week Planning:
-- After Insertion Sort: Merge Sort (recursive!)
-- Continue Hash Tables + Graphs practice
-- Plan integration project for weekend
-- Maybe start thinking about Milestone 4?
+- Hash Tables likely moving to maintenance by Thu/Fri
+- Continue Graphs practice
+- May start Merge Sort preview
+- Milestone 3 completion target: Mid Week 6 (Nov 11-13)
 
 ### Adjustments Made:
-- Changed scoring from /6 to /5 (simpler)
-- Added Weak Spot Wednesday (new!)
-- Spacing out maintenance more scientifically
+- Signed up for Claude Pro (no more daily limits!) ✅
+- Update Quick Start nightly (keeps it current)
+- Added more visuals for complex topics ✅
 
 ---
 
